@@ -1,1 +1,8 @@
+//apps
+//
+//
+//example
 include ':app_template_example'
+
+//libs：locate
+include ':lib_function_locate_baidu'

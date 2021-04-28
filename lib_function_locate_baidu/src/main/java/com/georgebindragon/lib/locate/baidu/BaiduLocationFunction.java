@@ -1,7 +1,6 @@
 package com.georgebindragon.lib.locate.baidu;
 
 import android.content.Context;
-import android.graphics.Point;
 import android.util.Log;
 
 import com.baidu.location.BDAbstractLocationListener;

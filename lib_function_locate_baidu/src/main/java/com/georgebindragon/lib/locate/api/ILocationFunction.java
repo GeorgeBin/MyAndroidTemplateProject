@@ -1,7 +1,6 @@
 package com.georgebindragon.lib.locate.api;
 
 import android.content.Context;
-import android.util.Log;
 
 /**
  * 创建人：George

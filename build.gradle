@@ -1,4 +1,8 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+// import gradle file
+apply from: "localConfig.gradle"
+
+
 buildscript {
     repositories {
         google()
@@ -7,8 +11,8 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.0"
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        // other
+        classpath 'com.meituan.android.walle:plugin:1.1.7' // channel:https://github.com/Meituan-Dianping/walle
     }
 }
 

@@ -1,47 +1,17 @@
 apply plugin: 'com.android.application'
 
+apply from: "local.gradle"
+
+
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
-
-    defaultConfig {
-        applicationId "com.georgebindragon.app.template.example"
-
-        minSdkVersion 21
-        targetSdkVersion 30
-
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
     buildTypes {
-
         debug {
             minifyEnabled false
-
-            applicationIdSuffix ".debug" //给debug一个包名延长，这样可以同时安装 正式版和调试版
-            versionNameSuffix '_debug'   //给debug一个versionName延长
-
-            //AndroidManifest.xml文件占位符
-            manifestPlaceholders = [
-                    Baidu_Map_Key: "xxxx",// 百度定位Key
-            ]
         }
 
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro' // proguardFiles FilePath.proguardFile
-
-            manifestPlaceholders = [
-                    Baidu_Map_Key: "xxxxx",
-            ]
         }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -58,3 +28,5 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
 }
+
+

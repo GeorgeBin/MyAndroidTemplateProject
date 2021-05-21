@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+
+
+def versionFilePath = this.getProjectDir().getPath() + "/config/version/version.properties"
+def name = Method.readVersionNameFromFile(versionFilePath)
+def code = Method.parseVersionCodeFromName(name)
+
+def debugKeyPath = this.getProjectDir().getPath() + "/config/ignore/debug.keystore"
+
+// 一次性配置参数：
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+        applicationId "com.georgebindragon.app.template.example"
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file(debugKeyPath)
+        }
+        release {}
+    }
+
+
+    buildTypes {
+
+        def buildName
+
+        debug {
+            buildName = Method.getTimeString()
+
+            applicationIdSuffix ".debug" // 包名延长，这样可以同时安装 正式版和调试版
+            versionNameSuffix "_debug" + "(" + buildName + ")"  // versionName延长 + 编译时间
+
+            //AndroidManifest.xml文件占位符 这个占位符如果分两个gradle文件写，可能会有问题
+            manifestPlaceholders = [
+                    BuildInfo_buildName: buildName,// 编译号
+                    Baidu_Map_Key      : "xxxxx",
+            ]
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            buildName = Method.getDateDiffFrom()
+            // versionNameSuffix "(" + buildName + ")"   // versionName延长 + 编译日期
+
+            manifestPlaceholders = [
+                    BuildInfo_buildName: buildName,// 编译号
+                    Baidu_Map_Key      : "xxxxx",
+            ]
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro' // proguardFiles FilePath.proguardFile
+            signingConfig Method.getSignInfo(signingConfigs.release, FilePath.signinfoFilePath, FilePath.signkeyFilePath)
+        }
+    }
+
+    // 无需改动的参数
+
+    defaultConfig {
+        versionCode code
+        versionName name
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}

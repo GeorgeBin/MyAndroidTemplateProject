@@ -1,0 +1,75 @@
+// gradle method
+
+ext {
+
+    long castMillToDay = 1000 * 60 * 60 * 24L
+
+    //------------------------------------------自定义方法-----------------------------------------------------
+    Method = [
+
+            //---------------------------方法：获取签名信息---------------------------
+            getSignInfo             : { signingConfig, propFilePath, keystore ->
+
+                File propFile = file(propFilePath)
+                if (propFile.exists()) {
+                    def props = new Properties()
+                    file(propFile).withInputStream { props.load(it) }
+
+                    signingConfig.storeFile = file(keystore)
+                    signingConfig.storePassword = props.getProperty("STORE_PASSWORD")
+                    // signingConfig.storePassword = props['STORE_PASSWORD']
+                    signingConfig.keyAlias = props['KEY_ALIAS']
+                    signingConfig.keyPassword = props['KEY_PASSWORD']
+                    signingConfig.v1SigningEnabled = true //v1签名=允许
+                    signingConfig.v2SigningEnabled = true //v2签名=允许
+                    println('method:getSignInfo(), signConfig is exits,path=' + propFilePath)
+
+                } else {
+                    println('sign config file not exists')
+                    signingConfig = null
+                }
+                return signingConfig
+            },//分隔符
+
+            //---------------------------方法：从文件中读取版本名称（eg: 2.0.28）---------------------------
+            readVersionNameFromFile : { propFilePath ->
+
+                def props = new Properties()
+                file(propFilePath).withInputStream { props.load(it) }
+                return props.getProperty("VERSION")
+            },
+
+            //--------------------------- 方法：从版本名称解析出版本号 ---------------------------
+            parseVersionCodeFromName: { versionName ->
+                def (major, minor, patch) = versionName.toLowerCase().tokenize('.')
+                (major, minor, patch) = [major, minor, patch].collect { it.toInteger() }
+                (major * 10000) + (minor * 100) + patch
+            },
+
+            //---------------------------方法：保留此flavors（三个参数）---------------------------
+            persistThisFlavor       : { variant, names, type1, type2, type3 ->
+                if (((null == type1) || names.contains(type1)) && ((null == type2) || names.contains(type2)) && ((null == type3) || names.contains(type3))) {
+                    variant.setIgnore(false)
+                    println "保留此Flavor：type1=" + (null == type1 ? "NULL" : type1) + "type2=" + (null == type2 ? "NULL" : type2) + "type3=" + (null == type3 ? "NULL" : type3)
+                }
+            },
+
+            //---------------------------方法：获取当前时间（按照给定的格式输出）---------------------------
+            getTimeString           : { pattern ->
+
+                if (null == pattern) pattern = "yyyy-MM-dd HH:mm:ss.SSS"
+                return new Date().format(pattern, TimeZone.getTimeZone("GMT+08:00"))
+            },
+
+            //--------------------------- 方法：获取指定日期（毫秒值） 到 当前时间的天数 ---------------------------
+
+            getDateDiffFrom         : { baseDate ->
+
+                if (null == baseDate) baseDate = 1356019200000L
+                def now = System.currentTimeMillis()
+                int releaseBuild = (int) ((now - baseDate) / castMillToDay)
+                return String.valueOf(releaseBuild)
+            },
+    ]
+
+}

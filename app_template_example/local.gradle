@@ -1,0 +1,10 @@
+
+
+// temp
+apply from: "config/ignore/temp.gradle"
+
+// base
+apply from: "config/gradle/base.gradle"
+
+// walle
+apply from: "config/channel/walle.gradle"

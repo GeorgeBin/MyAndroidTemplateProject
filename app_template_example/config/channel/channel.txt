@@ -1,0 +1,2 @@
+# 渠道命名规则：Flavors( 按照flavorDimensions的优先级 )
+# 示例：Android_Custom_Launcher 普通Android机_定制UI_系统Launcher

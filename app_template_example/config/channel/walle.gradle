@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+apply plugin: 'walle'
+
+//------------------------------------------ walle ------------------------------------------
+// https://github.com/Meituan-Dianping/walle
+
+walle {
+
+//    projectName - 项目名字
+//    appName - App模块名字
+//    packageName - applicationId (App包名packageName)
+//    buildType - buildType (release/debug等)
+//    channel - channel名称 (对应渠道打包中的渠道名字)
+//    versionName - versionName (显示用的版本号)
+//    versionCode - versionCode (内部版本号)
+//    buildTime - buildTime (编译构建日期时间)
+//    fileSHA1 - fileSHA1 (最终APK文件的SHA1哈希值)
+//    flavorName - 编译构建 productFlavors 名
+
+    apkOutputFolder = new File(FilePath.apkOutputPath) // default="${project.buildDir}/outputs/apk"
+    apkFileNameFormat = 'App-${versionName}-${buildTime}-${flavorName}-${channel}-${buildType}.apk' // default='${appName}-${buildType}-${channel}.apk'
+    channelFile = file("channel.txt")
+}
+
+dependencies {
+    implementation 'com.meituan.android.walle:library:1.1.7'
+}
+
+// 备注：
+// 如果没有配置签名，则会出现 “com.meituan.android.walle.GradlePlugin NullPointerException” 问题

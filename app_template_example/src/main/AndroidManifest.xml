@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <meta-data
+            android:name="app.build.info.buildName"
+            android:value="${BuildInfo_buildName}" />
+
+        <activity android:name="com.georgebindragon.app.template.example.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

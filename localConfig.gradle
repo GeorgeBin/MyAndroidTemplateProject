@@ -5,7 +5,4 @@ def gradleFilePath = "gradle"
 //0. Method
 apply from: "$gradleFilePath/method.gradle"
 
-//1.0 Version build
-apply from: "$gradleFilePath/versioning.gradle"
-
 

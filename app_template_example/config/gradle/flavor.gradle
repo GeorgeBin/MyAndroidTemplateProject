@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+
+//-------------------------- 异化 --------------------------
+
+android {
+
+    //一、异化维度：左侧的优先级更高
+    flavorDimensions "device", "ui", "home", "empower"
+
+    //具体异化，命名规则：
+    // 1. 小写开头，结尾为__两个下划线，便于分隔命名
+    // 2. 避开可能的系统关键字
+    productFlavors {
+
+        //------------------ 是否为系统应用：系统应用、第三方应用 ------------------
+        sys__ { dimension "empower" }
+        third__ { dimension "empower" }
+
+        //------------------ 类型：桌面、普通app ------------------
+        launcher__ { dimension "home" }
+        normal__ { dimension "home" }
+
+        //------------------ UI ------------------
+        brand__ { dimension "ui" }
+
+        //------------------ 设备 ------------------
+        phone__ { dimension "device" } // 普通手机
+    }
+
+    //1. p_module 使用资源目录列表（每增加一个，记得更新）
+    def dirs = ['p_module_d']
+
+    //2. 根据p_module 和 异化，指定资源目录
+    sourceSets {
+
+        def rootDirs = "src/flavor/"
+
+        main {  //指定共用部分目录
+
+            // Base工程
+            def dir_BaseRoot = 'base'
+
+            def dir_BaseDebug = 'debug' //debug配置
+            def dir_BaseRelease = 'release' // release 配置
+
+            debug {
+                res.srcDir "${dir_BaseRoot}/${dir_BaseDebug}/res"
+                java.srcDir "${dir_BaseRoot}/${dir_BaseDebug}/java"
+                manifest.srcFile "${dir_BaseRoot}/${dir_BaseDebug}/AndroidManifest.xml"
+            }
+
+            release {
+                res.srcDir "${dir_BaseRoot}/${dir_BaseRelease}/res"
+                java.srcDir "${dir_BaseRoot}/${dir_BaseRelease}/java"
+                // manifest.srcFile "${dir_BaseRoot}/${dir_BaseRelease}/AndroidManifest.xml"
+            }
+        }
+
+        //------------------ 设备 ------------------
+        phone__ {
+
+            def dirname = 'device_phone'
+
+            manifest.srcFile rootDirs + "${dirname}/AndroidManifest.xml"
+            jniLibs.srcDirs rootDirs + "${dirname}/jniLibs"
+            res.srcDir rootDirs + "${dirname}/res"
+            assets.srcDirs rootDirs + "${dirname}/assets"
+            java.srcDirs rootDirs + "${dirname}/java"
+
+//            dirs.each { dir ->
+//                jniLibs.srcDirs "src/pin_module/${dir}/${dirname}/jniLibs"
+//                assets.srcDirs "src/pin_module/${dir}/${dirname}/assets"
+//                java.srcDir("src/pin_module/${dir}/${dirname}/java")
+//                res.srcDir("src/pin_module/${dir}/${dirname}/res")
+//            }
+        }
+    }
+}

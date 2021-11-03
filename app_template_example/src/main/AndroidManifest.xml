@@ -14,13 +14,14 @@
             android:name="app.build.info.buildName"
             android:value="${BuildInfo_buildName}" />
 
-        <activity android:name="com.georgebindragon.app.template.example.MainActivity">
+        <activity android:name="com.georgebindragon.app.template.example.ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.georgebindragon.app.template.example.ui.MediaActivity" />
     </application>
 
 </manifest>

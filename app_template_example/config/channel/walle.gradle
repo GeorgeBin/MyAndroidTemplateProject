@@ -19,7 +19,8 @@ walle {
 
     apkOutputFolder = new File(FilePath.apkOutputPath) // default="${project.buildDir}/outputs/apk"
     apkFileNameFormat = 'App-${versionName}-${buildTime}-${flavorName}-${channel}-${buildType}.apk' // default='${appName}-${buildType}-${channel}.apk'
-    channelFile = file("channel.txt")
+//    channelFile = file("channel.txt")
+    channelFile = file("${project.getProjectDir()}/config/channel/channel.txt") // 渠道配置文件路径
 }
 
 dependencies {

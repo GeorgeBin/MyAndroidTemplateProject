@@ -1,7 +1,7 @@
 
 ext {
 
-    def LocalFileRoot = '/Users/george/Work/My/Temp/Build'
+    def LocalFileRoot = '/Users/george/Work/Temp/MyAndroidTemplateProject'
 
     FilePath = [
             apkOutputPath: "$LocalFileRoot/[buildChannel]/release", // apk out put

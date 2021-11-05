@@ -22,6 +22,7 @@ public class MediaActivity extends AppCompatActivity implements View.OnClickList
 	Button typeSystem_btn;
 	Button typeMusic_btn;
 	Button typeRing_btn;
+	Button speaker_btn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -41,15 +42,21 @@ public class MediaActivity extends AppCompatActivity implements View.OnClickList
 		typeMusic_btn.setOnClickListener(this);
 		typeRing_btn = findViewById(R.id.ui_main_typeRing_btn);
 		typeRing_btn.setOnClickListener(this);
+		speaker_btn = findViewById(R.id.ui_main_speaker_btn);
+		speaker_btn.setOnClickListener(this);
 
 		findViewById(R.id.ui_main_typeAlarm_btn).setOnClickListener(this);
 		findViewById(R.id.ui_main_typeNotification_btn).setOnClickListener(this);
 		findViewById(R.id.ui_main_typeDTMF_btn).setOnClickListener(this);
 
 		initPlayer(AudioManager.STREAM_MUSIC);
+		if (null == audioManager) audioManager = (AudioManager) this.getApplicationContext().getSystemService(AUDIO_SERVICE);
+		speaker_btn.setText("扬声器状态：" + (speakerOn ? "开" : "关"));
 	}
 
-	RawPlayer rawPlayer;
+	AudioManager audioManager;
+	boolean      speakerOn = false;
+	RawPlayer    rawPlayer;
 
 	private void initPlayer(int type)
 	{
@@ -60,6 +67,13 @@ public class MediaActivity extends AppCompatActivity implements View.OnClickList
 	private void playMusic() { rawPlayer.play(); }
 
 	private void stopMusic() { rawPlayer.stop(); }
+
+	private void changeSpeaker()
+	{
+		speakerOn = !speakerOn;
+		audioManager.setSpeakerphoneOn(speakerOn);
+		speaker_btn.setText("扬声器状态：" + (speakerOn ? "开" : "关"));
+	}
 
 	@Override
 	public void onClick(View v)
@@ -75,6 +89,9 @@ public class MediaActivity extends AppCompatActivity implements View.OnClickList
 				break;
 			case R.id.ui_main_stop_btn:
 				stopMusic();
+				break;
+			case R.id.ui_main_speaker_btn:
+				changeSpeaker();
 				break;
 			case R.id.ui_main_typeCall_btn:
 				initPlayer(AudioManager.STREAM_VOICE_CALL);

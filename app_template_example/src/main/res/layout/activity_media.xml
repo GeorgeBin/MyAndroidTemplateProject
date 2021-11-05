@@ -25,6 +25,12 @@
                     android:text="播放" />
 
                 <Button
+                    android:id="@+id/ui_main_speaker_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="扬声器" />
+                <Button
                     android:id="@+id/ui_main_stop_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"

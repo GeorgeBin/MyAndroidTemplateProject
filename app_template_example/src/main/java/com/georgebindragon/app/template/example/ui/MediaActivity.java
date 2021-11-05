@@ -4,6 +4,7 @@ import android.media.AudioManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.georgebindragon.app.template.example.R;
 import com.georgebindragon.app.template.example.media.RawPlayer;
@@ -23,6 +24,9 @@ public class MediaActivity extends AppCompatActivity implements View.OnClickList
 	Button typeMusic_btn;
 	Button typeRing_btn;
 	Button speaker_btn;
+
+	Button   setParameters_btn;
+	EditText setParameters_et;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -45,6 +49,10 @@ public class MediaActivity extends AppCompatActivity implements View.OnClickList
 		speaker_btn = findViewById(R.id.ui_main_speaker_btn);
 		speaker_btn.setOnClickListener(this);
 
+		setParameters_et = findViewById(R.id.ui_main_setParameters_et);
+		setParameters_btn = findViewById(R.id.ui_main_setParameters_btn);
+		setParameters_btn.setOnClickListener(this);
+
 		findViewById(R.id.ui_main_typeAlarm_btn).setOnClickListener(this);
 		findViewById(R.id.ui_main_typeNotification_btn).setOnClickListener(this);
 		findViewById(R.id.ui_main_typeDTMF_btn).setOnClickListener(this);
@@ -52,6 +60,7 @@ public class MediaActivity extends AppCompatActivity implements View.OnClickList
 		initPlayer(AudioManager.STREAM_MUSIC);
 		if (null == audioManager) audioManager = (AudioManager) this.getApplicationContext().getSystemService(AUDIO_SERVICE);
 		speaker_btn.setText("扬声器状态：" + (speakerOn ? "开" : "关"));
+		setParameters_et.setText("test");
 	}
 
 	AudioManager audioManager;
@@ -73,6 +82,13 @@ public class MediaActivity extends AppCompatActivity implements View.OnClickList
 		speakerOn = !speakerOn;
 		audioManager.setSpeakerphoneOn(speakerOn);
 		speaker_btn.setText("扬声器状态：" + (speakerOn ? "开" : "关"));
+	}
+
+	private void setParameters()
+	{
+		String parameters = setParameters_et.getText().toString().trim();
+		audioManager.setParameters(parameters);
+		LogProxy.i(TAG, "setParameters-->parameters=" + parameters);
 	}
 
 	@Override
@@ -113,6 +129,9 @@ public class MediaActivity extends AppCompatActivity implements View.OnClickList
 				break;
 			case R.id.ui_main_typeDTMF_btn:
 				initPlayer(AudioManager.STREAM_DTMF);
+				break;
+			case R.id.ui_main_setParameters_btn:
+				setParameters();
 				break;
 		}
 	}

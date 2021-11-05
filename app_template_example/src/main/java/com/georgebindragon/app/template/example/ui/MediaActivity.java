@@ -56,6 +56,8 @@ public class MediaActivity extends AppCompatActivity implements View.OnClickList
 		findViewById(R.id.ui_main_typeAlarm_btn).setOnClickListener(this);
 		findViewById(R.id.ui_main_typeNotification_btn).setOnClickListener(this);
 		findViewById(R.id.ui_main_typeDTMF_btn).setOnClickListener(this);
+		findViewById(R.id.ui_main_setParameters1_btn).setOnClickListener(this);
+		findViewById(R.id.ui_main_setParameters2_btn).setOnClickListener(this);
 
 		initPlayer(AudioManager.STREAM_MUSIC);
 		if (null == audioManager) audioManager = (AudioManager) this.getApplicationContext().getSystemService(AUDIO_SERVICE);
@@ -132,6 +134,12 @@ public class MediaActivity extends AppCompatActivity implements View.OnClickList
 				break;
 			case R.id.ui_main_setParameters_btn:
 				setParameters();
+				break;
+			case R.id.ui_main_setParameters1_btn:
+				audioManager.setParameters("headsetstat=on");
+				break;
+			case R.id.ui_main_setParameters2_btn:
+				audioManager.setParameters("headsetstat=off");
 				break;
 		}
 	}

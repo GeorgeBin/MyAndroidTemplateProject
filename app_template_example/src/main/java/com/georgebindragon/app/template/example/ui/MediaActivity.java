@@ -58,6 +58,8 @@ public class MediaActivity extends AppCompatActivity implements View.OnClickList
 		findViewById(R.id.ui_main_typeDTMF_btn).setOnClickListener(this);
 		findViewById(R.id.ui_main_setParameters1_btn).setOnClickListener(this);
 		findViewById(R.id.ui_main_setParameters2_btn).setOnClickListener(this);
+		findViewById(R.id.ui_main_setParameters3_btn).setOnClickListener(this);
+		findViewById(R.id.ui_main_setParameters4_btn).setOnClickListener(this);
 
 		initPlayer(AudioManager.STREAM_MUSIC);
 		if (null == audioManager) audioManager = (AudioManager) this.getApplicationContext().getSystemService(AUDIO_SERVICE);
@@ -140,6 +142,12 @@ public class MediaActivity extends AppCompatActivity implements View.OnClickList
 				break;
 			case R.id.ui_main_setParameters2_btn:
 				audioManager.setParameters("headsetstat=off");
+				break;
+			case R.id.ui_main_setParameters3_btn:
+				audioManager.setParameters("audiomodestat=dual");
+				break;
+			case R.id.ui_main_setParameters4_btn:
+				audioManager.setParameters("audiomodestat=one");
 				break;
 		}
 	}

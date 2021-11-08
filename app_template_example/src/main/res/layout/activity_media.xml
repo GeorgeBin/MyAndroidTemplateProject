@@ -115,6 +115,18 @@
                 android:layout_height="@dimen/dimens_50dp"
                 android:text="设置：headsetstat=off" />
 
+            <Button
+                android:id="@+id/ui_main_setParameters3_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimens_50dp"
+                android:text="设置：audiomodestat=dual" />
+
+            <Button
+                android:id="@+id/ui_main_setParameters4_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimens_50dp"
+                android:text="设置：audiomodestat=one" />
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>

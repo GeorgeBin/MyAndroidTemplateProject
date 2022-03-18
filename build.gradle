@@ -1,7 +1,5 @@
 
 // import gradle file
-apply from: "localConfig.gradle"
-
 
 buildscript {
     repositories {
@@ -13,8 +11,9 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.0"
 
-        // other
+        // tools
         classpath 'com.meituan.android.walle:plugin:1.1.7' // channel:https://github.com/Meituan-Dianping/walle
+        classpath 'io.github.didi.dokit:dokitx-plugin:3.5.0.1'
     }
 }
 

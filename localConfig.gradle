@@ -1,8 +1,0 @@
-// import gradle file
-
-def gradleFilePath = "gradle"
-
-//0. Method
-apply from: "$gradleFilePath/method.gradle"
-
-

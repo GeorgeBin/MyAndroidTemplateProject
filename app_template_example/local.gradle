@@ -1,13 +1,22 @@
-
-
-// temp
-apply from: "config/ignore/temp.gradle"
-
-// base
+//
+//
+// module level
+// gradle
 apply from: "config/gradle/base.gradle"
-
-// flavor
 apply from: "config/gradle/flavor.gradle"
 
-// walle
-apply from: "config/channel/walle.gradle"
+// info
+apply from: "config/info/config.gradle"
+apply from: "config/info/temp.gradle"
+
+// tools
+apply from: "config/tools/walle.gradle"
+//apply from: "config/tools/dokit.gradle"
+
+
+
+// project level
+// gradle
+apply from: "${project.getRootDir()}/config/gradle/method.gradle"
+// pack
+apply from: "${project.getRootDir()}/config/sign/sign.gradle"

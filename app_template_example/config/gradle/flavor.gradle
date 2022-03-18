@@ -5,7 +5,7 @@ apply plugin: 'com.android.application'
 android {
 
     //一、异化维度：左侧的优先级更高
-    flavorDimensions "device", "ui", "home", "empower"
+    flavorDimensions "device", "custom", "show", "type", "uid" // 默认为第三方+普通应用，系统应用和Launcher，单独配置
 
     //具体异化，命名规则：
     // 1. 小写开头，结尾为__两个下划线，便于分隔命名
@@ -13,18 +13,21 @@ android {
     productFlavors {
 
         //------------------ 是否为系统应用：系统应用、第三方应用 ------------------
-        sys__ { dimension "empower" }
-        third__ { dimension "empower" }
+        sys_ { dimension "uid" }
+        third_ { dimension "uid" }
 
         //------------------ 类型：桌面、普通app ------------------
-        launcher__ { dimension "home" }
-        normal__ { dimension "home" }
+        launcher_ { dimension "type" }
+        normal_ { dimension "type" }
 
-        //------------------ UI ------------------
-        brand__ { dimension "ui" }
+        //------------------ 界面：UI ------------------
+        brand_ { dimension "show" } // 主品牌
+
+        //------------------ 定制：内容 ------------------
+        major_ { dimension "custom" } // 主线
 
         //------------------ 设备 ------------------
-        phone__ { dimension "device" } // 普通手机
+        phone_ { dimension "device" } // 普通手机。其他：电视、手表、平板、无屏幕、台式
     }
 
     //1. p_module 使用资源目录列表（每增加一个，记得更新）
@@ -33,12 +36,10 @@ android {
     //2. 根据p_module 和 异化，指定资源目录
     sourceSets {
 
-        def rootDirs = "src/flavor/"
-
         main {  //指定共用部分目录
 
             // Base工程
-            def dir_BaseRoot = 'base'
+            def dir_BaseRoot = 'src/base'
 
             def dir_BaseDebug = 'debug' //debug配置
             def dir_BaseRelease = 'release' // release 配置
@@ -54,18 +55,58 @@ android {
                 java.srcDir "${dir_BaseRoot}/${dir_BaseRelease}/java"
                 // manifest.srcFile "${dir_BaseRoot}/${dir_BaseRelease}/AndroidManifest.xml"
             }
+
+            // 通用资源或功能
+//            def commonName = 'common'
+//            res.srcDir "${dir_BaseRoot}/${commonName}/res"
+//            manifest.srcFile "${dir_BaseRoot}/${commonName}/AndroidManifest.xml"
+
+            // 国际化资源
+            def languageName = 'language'
+            res.srcDir "${dir_BaseRoot}/${languageName}/res"
         }
 
-        //------------------ 设备 ------------------
-        phone__ {
+        //------------------------------------ flavor ------------------------------------
+        def flavorRoot = "src/flavor/"
+
+        //------------------ uid ------------------
+        sys_ {
+            def dirname = 'uid_sys'
+            manifest.srcFile "${flavorRoot}/${dirname}/AndroidManifest.xml"
+        }
+        //------------------ type ------------------
+        launcher_ {
+            def dirname = 'type_launcher'
+            manifest.srcFile "${flavorRoot}/${dirname}/AndroidManifest.xml"
+        }
+        normal_ {
+            def dirname = 'type_normal'
+            manifest.srcFile "${flavorRoot}/${dirname}/AndroidManifest.xml"
+        }
+        //------------------ show ------------------
+        brand_ {
+            def dirname = 'show_brand'
+            manifest.srcFile "${flavorRoot}/${dirname}/AndroidManifest.xml"
+            res.srcDir "${flavorRoot}/${dirname}/res"
+        }
+
+        //------------------ custom ------------------
+        major_ {
+            def dirname = 'custom_major'
+            manifest.srcFile "${flavorRoot}/${dirname}/AndroidManifest.xml"
+            res.srcDir "${flavorRoot}/${dirname}/res"
+        }
+
+        //------------------ device ------------------
+        phone_ {
 
             def dirname = 'device_phone'
 
-            manifest.srcFile rootDirs + "${dirname}/AndroidManifest.xml"
-            jniLibs.srcDirs rootDirs + "${dirname}/jniLibs"
-            res.srcDir rootDirs + "${dirname}/res"
-            assets.srcDirs rootDirs + "${dirname}/assets"
-            java.srcDirs rootDirs + "${dirname}/java"
+            manifest.srcFile "${flavorRoot}/${dirname}/AndroidManifest.xml"
+            jniLibs.srcDirs "${flavorRoot}/${dirname}/jniLibs"
+            res.srcDir "${flavorRoot}/${dirname}/res"
+            assets.srcDirs "${flavorRoot}/${dirname}/assets"
+            java.srcDirs "${flavorRoot}/${dirname}/java"
 
 //            dirs.each { dir ->
 //                jniLibs.srcDirs "src/pin_module/${dir}/${dirname}/jniLibs"

@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.didi.dokit'
+
+//------------------------------------------ dokit ------------------------------------------
+// https://github.com/didi/DoraemonKit
+
+dokitExt {
+
+//通用设置
+    comm {
+        //地图经纬度开关
+        gpsSwitch true
+        //网络开关
+        networkSwitch true
+        //大图开关
+        bigImgSwitch true
+        //webView js 抓包
+        webViewSwitch true
+    }
+
+    slowMethod {
+        //调用栈模式配置 对应gradle.properties中DOKIT_METHOD_STRATEGY=0
+        stackMethod {
+            //默认值为 5ms 小于该值的函数在调用栈中不显示
+            thresholdTime 10
+            //调用栈函数入口 千万不要用我默认的配置 如果有特殊需求修改成项目中自己的入口 假如不需要可以去掉该字段
+            enterMethods = ["com.didichuxing.doraemondemo.MainDebugActivity.test1"]
+            //黑名单 粒度最小到类 暂不支持到方法  千万不要用我默认的配置 如果有特殊需求修改成项目中自己的入口 假如不需要可以去掉该字段
+            methodBlacklist = ["com.facebook.drawee.backends.pipeline.Fresco"]
+        }
+        //普通模式配置 对应gradle.properties中DOKIT_METHOD_STRATEGY=1
+        normalMethod {
+            //默认值为 500ms 小于该值的函数在运行时不会在控制台中被打印
+            thresholdTime 500
+            //需要针对函数插装的包名 千万不要用我默认的配置 如果有特殊需求修改成项目中自己的项目包名 假如不需要可以去掉该字段
+            packageNames = ["com.didichuxing.doraemondemo"]
+            //不需要针对函数插装的包名&类名 千万不要用我默认的配置 如果有特殊需求修改成项目中自己的项目包名 假如不需要可以去掉该字段
+            methodBlacklist = ["com.didichuxing.doraemondemo.dokit"]
+        }
+    }
+}
+
+dependencies {
+    def lastVersion = "3.5.0.1"
+
+    //核心模块
+    debugImplementation "io.github.didi.dokit:dokitx:${lastVersion}"
+    //文件同步模块
+    debugImplementation "io.github.didi.dokit:dokitx-ft:${lastVersion}"
+    //一机多控模块
+    debugImplementation "io.github.didi.dokit:dokitx-mc:${lastVersion}"
+    //weex模块
+    debugImplementation "io.github.didi.dokit:dokitx-weex:${lastVersion}"
+
+    // release
+    releaseImplementation "io.github.didi.dokit:dokitx-no-op:${lastVersion}"
+}
+
+
+// 备注：
+// 1. 全局配置：位于项目根目录下的gradle.properties中
+// 2. 当修改完DoKit插件的相关配置以后一定要clean一下重新编译才能生效。这是AS的缓存增量编译导致的，暂时没有其他好的解决方案。

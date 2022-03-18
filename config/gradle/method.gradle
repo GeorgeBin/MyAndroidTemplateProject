@@ -41,6 +41,7 @@ ext {
 
             //--------------------------- 方法：从版本名称解析出版本号 ---------------------------
             parseVersionCodeFromName: { versionName ->
+
                 def (major, minor, patch) = versionName.toLowerCase().tokenize('.')
                 (major, minor, patch) = [major, minor, patch].collect { it.toInteger() }
                 (major * 10000) + (minor * 100) + patch
@@ -48,6 +49,7 @@ ext {
 
             //---------------------------方法：保留此flavors（三个参数）---------------------------
             persistThisFlavor       : { variant, names, type1, type2, type3 ->
+
                 if (((null == type1) || names.contains(type1)) && ((null == type2) || names.contains(type2)) && ((null == type3) || names.contains(type3))) {
                     variant.setIgnore(false)
                     println "保留此Flavor：type1=" + (null == type1 ? "NULL" : type1) + "type2=" + (null == type2 ? "NULL" : type2) + "type3=" + (null == type3 ? "NULL" : type3)
@@ -62,7 +64,6 @@ ext {
             },
 
             //--------------------------- 方法：获取指定日期（毫秒值） 到 当前时间的天数 ---------------------------
-
             getDateDiffFrom         : { baseDate ->
 
                 if (null == baseDate) baseDate = 1356019200000L

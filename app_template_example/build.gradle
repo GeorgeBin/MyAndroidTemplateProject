@@ -17,19 +17,13 @@ android {
 
     buildTypes {
 
-
         debug {
             minifyEnabled false
             applicationIdSuffix ".debug" // 包名延长，这样可以同时安装 正式版和调试版
             signingConfig signingConfigs.debug
-            // signingConfig Method.getSignInfo(signingConfigs.release, releaseKeyInfo, releaseKeyPath)
-            // signingConfig Method.getSignInfo(signingConfigs.release, FilePath.signinfoFilePath, FilePath.signkeyFilePath)
-
 
             //AndroidManifest.xml文件占位符 这个占位符如果分两个gradle文件写，可能会有问题
-//            def buildName= Method.getTimeString()
             manifestPlaceholders = [
-//                    BuildInfo_buildName: "buildName",// 编译号
                     Baidu_Map_Key      : "xxxxx",
             ]
         }
@@ -38,9 +32,7 @@ android {
             minifyEnabled true // 开启混淆
             signingConfig signingConfigs.release
 
-//            def buildName= Method.getTimeString()
             manifestPlaceholders = [
-//                    BuildInfo_buildName: "buildName",// 编译号
                     Baidu_Map_Key      : "xxxxx",
             ]
         }
@@ -52,9 +44,7 @@ dependencies {
 
     implementation project(path: ':lib_function_locate_baidu')
 
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-
-
+    implementation 'androidx.appcompat:appcompat:1.4.0'
 
 }
 

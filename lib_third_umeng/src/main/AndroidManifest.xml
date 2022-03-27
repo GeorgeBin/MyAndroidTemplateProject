@@ -1,0 +1,18 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.georgebindragon.lib.third.umeng">
+
+    <!--    实际用到的权限-->
+    <!--    <uses-permission android:name="android.permission.INTERNET"/>-->
+    <!--    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
+    <!--    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>-->
+    <!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>-->
+
+    <!--友盟：key、渠道（配置在 application 内）-->
+    <!--    <meta-data-->
+    <!--        android:name="UMENG_APPKEY"-->
+    <!--        android:value="${UMENG_APPKEY}" />-->
+
+    <!--    <meta-data-->
+    <!--        android:name="UMENG_CHANNEL"-->
+    <!--        android:value="xxx" />-->
+</manifest>

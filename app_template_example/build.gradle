@@ -25,6 +25,7 @@ android {
             //AndroidManifest.xml文件占位符 这个占位符如果分两个gradle文件写，可能会有问题
             manifestPlaceholders = [
                     Baidu_Map_Key      : "xxxxx",
+                    UMENG_APPKEY      : "623c31cc0059ce2bad02afd8",
             ]
         }
 
@@ -34,6 +35,7 @@ android {
 
             manifestPlaceholders = [
                     Baidu_Map_Key      : "xxxxx",
+                    UMENG_APPKEY      : "623c31cc0059ce2bad02afd8",
             ]
         }
     }
@@ -43,9 +45,9 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
     implementation project(path: ':lib_function_locate_baidu')
+    implementation project(path: ':lib_third_umeng')
 
-    implementation 'androidx.appcompat:appcompat:1.4.0'
-
+    implementation 'androidx.appcompat:appcompat:1.3.0'
 }
 
 

@@ -1,8 +1,12 @@
-//apps
 //
 //
 //example
 include ':app_template_example'
+//
+// base
+include ':base_app'
 
 //libs：locate
 include ':lib_function_locate_baidu'
+//libs：third party
+include ':lib_third_umeng'

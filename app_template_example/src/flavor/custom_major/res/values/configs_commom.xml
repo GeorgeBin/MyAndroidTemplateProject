@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 开机启动 默认值=false -->
+    <bool name="custom_default_config_autoStart_bool">false</bool>
+
+    <!-- 默认语言 默认值=0（跟随系统） -->
+    <integer name="custom_default_config_languageCode_integer">0</integer>
+    <string name="custom_default_channel">template_channel</string>
+</resources>

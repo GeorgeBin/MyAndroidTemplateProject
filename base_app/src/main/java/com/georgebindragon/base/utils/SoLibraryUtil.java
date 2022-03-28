@@ -25,6 +25,6 @@ public class SoLibraryUtil
 
 	public static void loadLibrary(final String library)
 	{
-		ReLinker.loadLibrary(BaseUtils.getContext(), library);
+		loadLibrary(BaseUtils.getContext(), library);
 	}
 }

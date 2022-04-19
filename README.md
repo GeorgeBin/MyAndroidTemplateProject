@@ -1,14 +1,24 @@
 # MyAndroidTemplateProject
 
-template project for develop android app
+> template project for develop android app
 
 project structure:
 
+- [ ] TODO
+- [x] Check
+
 manual:
-1. config those after use this template:
+
+1. Config those after use this template:
     1. applicationId
     2. walle：
-        - apk out put (app_template_example/config/info/temp.gradle:apkOutputPath)
-        - channel list (app_template_example/config/pack/channel.txt)
-    3. your first version code (app_template_example/config/pack/version.properties)
-2. 
+        - apk out put path
+        - apk out put name
+        - channel list
+    3. your first version code
+
+2. Things should ignore form version control
+    1. gradle local config: app_template_example/config/info/temp.gradle
+
+3. Every time you publish:
+    1. change version code

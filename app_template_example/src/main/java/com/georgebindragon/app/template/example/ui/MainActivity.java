@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 			Bundle extras = applicationInfo.metaData;
 			if (null != extras)
 			{
-				Object value     = extras.get("app.build.info.buildName");
-				String buildName = String.valueOf(value);
-				test_tv.setText("buildName=" + buildName);
+//				Object value     = extras.get("app.build.info.buildName");
+//				String buildName = String.valueOf(value);
+//				test_tv.setText("buildName=" + buildName);
 			}
 		} catch (PackageManager.NameNotFoundException e)
 		{

@@ -57,13 +57,15 @@ android {
             }
 
             // 通用资源或功能
-//            def commonName = 'common'
-//            res.srcDir "${dir_BaseRoot}/${commonName}/res"
-//            manifest.srcFile "${dir_BaseRoot}/${commonName}/AndroidManifest.xml"
+            def commonName = 'common'
+            res.srcDir "${dir_BaseRoot}/${commonName}/res"
+            manifest.srcFile "${dir_BaseRoot}/${commonName}/AndroidManifest.xml"
 
             // 国际化资源
             def languageName = 'language'
             res.srcDir "${dir_BaseRoot}/${languageName}/res"
+
+            manifest.srcFile "src/main/AndroidManifest.xml"
         }
 
         //------------------------------------ flavor ------------------------------------

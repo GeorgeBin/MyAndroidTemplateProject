@@ -1,7 +1,8 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 apply from: "local.gradle"
-
 
 android {
 

@@ -61,5 +61,13 @@
             android:name="notch.config"
             android:value="portrait|landscape" />
 
+
+        <!-- service -->
+        <!--          通用工具服务          -->
+        <service
+            android:name="com.georgebindragon.application.service.CommonToolService"
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize|locale|layoutDirection|navigation"
+            android:foregroundServiceType="location" />
+
     </application>
 </manifest>

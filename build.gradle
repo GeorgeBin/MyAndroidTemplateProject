@@ -1,31 +1,16 @@
-
 // import gradle file
 
 buildscript {
-    repositories {
-        mavenCentral()
-        google()
-        jcenter()
-        maven { url "https://jitpack.io" }
-        maven { url 'https://repo1.maven.org/maven2/' }
-    }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.2'
-
         // tools
         classpath 'com.meituan.android.walle:plugin:1.1.7' // channel:https://github.com/Meituan-Dianping/walle
         classpath 'io.github.didi.dokit:dokitx-plugin:3.5.0.1'
     }
 }
 
-allprojects {
-    repositories {
-        mavenCentral()
-        google()
-        jcenter()
-        maven { url "https://jitpack.io" }
-        maven { url 'https://repo1.maven.org/maven2/' }
-    }
+plugins {
+    id 'com.android.application' version '7.1.2' apply false
+    id 'com.android.library' version '7.1.2' apply false
 }
 
 task clean(type: Delete) {

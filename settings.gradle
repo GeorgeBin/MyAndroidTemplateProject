@@ -1,12 +1,29 @@
 //
-//
-//example
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // legacy
+        maven { url "https://jitpack.io" }
+        maven { url 'https://repo1.maven.org/maven2/' }
+    }
+}
+
+/*---------- module ----------*/
+// example
 include ':app_template_example'
-//
 // base
 include ':base_app'
-
-//libs：locate
+// libs：locate
 include ':lib_function_locate_baidu'
-//libs：third party
+// libs：third party
 include ':lib_third_umeng'

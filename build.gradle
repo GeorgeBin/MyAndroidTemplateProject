@@ -10,7 +10,7 @@ buildscript {
         maven { url 'https://repo1.maven.org/maven2/' }
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.0.0"
+        classpath 'com.android.tools.build:gradle:7.1.2'
 
         // tools
         classpath 'com.meituan.android.walle:plugin:1.1.7' // channel:https://github.com/Meituan-Dianping/walle

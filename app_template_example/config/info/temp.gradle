@@ -6,7 +6,7 @@ ext {
     FilePath = [
             examplePath: "$LocalFileRoot/example", // example
 
-            apkOutputPath: "$LocalFileRoot/[buildChannel]/release", // apk out put for walle
-            proguardFilePath: "/Users/Develop/Android/Configs/Keys/GeorgeBinDragon/sign_p12.properties", // proguard file path
+            apkOutputPath: "$LocalFileRoot/[buildChannel]/release", // todo: apk out put for walle
+            proguardFilePath: "/Users/Develop/Android/Configs/Keys/GeorgeBinDragon/sign_p12.properties", // todo: proguard file path
     ]
 }

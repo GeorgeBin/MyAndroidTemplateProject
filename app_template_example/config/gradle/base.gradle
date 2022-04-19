@@ -32,7 +32,7 @@ android {
         versionCode code
         versionName name
 
-        // applicationId "com.georgebindragon.app.template.example"
+        // applicationId "com.georgebindragon.app.template.example" // also can use static string here
         applicationId AppConfig.applicationId
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -41,7 +41,9 @@ android {
     buildTypes {
 
         debug {
-            versionNameSuffix "_debug" + "(" + Method.getTimeString() + ")"  // versionName延长 + 编译时间
+            minifyEnabled false
+            applicationIdSuffix ".debug" // add after applicationId, make it a different app
+            versionNameSuffix "_debug" + "(" + Method.getTimeString() + ")"  // add after versionName, easy to know debug version and pack time
         }
 
         release {

@@ -2,6 +2,6 @@
 ext {
 
     AppConfig = [
-            applicationId: "com.georgebindragon.template.example", // applicationId
+            applicationId: "com.georgebindragon.template.example", // todo: change applicationId
     ]
 }

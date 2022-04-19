@@ -1,8 +1,8 @@
-# 渠道命名规则：Flavors( 按照flavorDimensions的优先级 )
+# todo: channel list
 
-# 示例：Android_Custom_Launcher 普通Android机_定制UI_系统Launcher
+# channel name rule:by flavorDimensions
 
-# Android_Custom_Normal_Third
+# eg: Android_Custom_Launcher means: a regular cellphone with custom ui and it is a launcher
+# eg: Android_Custom_Normal_Third
 
-# 对应：Phone__Brand__Normal__Third__Release
-HuangYuanJun
+Android_Custom_Normal_Third

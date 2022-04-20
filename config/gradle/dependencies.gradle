@@ -1,0 +1,77 @@
+// dependencies
+
+ext {
+
+    //配置内使用：
+    SDKVersion = [
+            compileSdkVersion   : 31,
+
+            minSdkVersion       : 21,
+            minSdkVersion_old   : 14,
+            targetSdkVersion    : 31,
+            targetSdkVersion_old: 20,
+    ]
+
+    myGroup = 'com.georgebindragon'
+    DoraemonkitGroup = 'io.github.didi.dokit'
+    RxJava2Group = 'io.reactivex.rxjava2'
+    QmuiGroup = 'com.qmuiteam'
+
+    //Retrofit2
+    Retrofit2Group = 'com.squareup.retrofit2'
+    Retrofit2Version = '2.5.0'//版本号
+
+    //依赖内使用：
+    Dependence = [
+
+            // georgebindragon  https://repo1.maven.org/maven2/com/georgebindragon/
+            Utilsjava              : [group: myGroup, name: 'utils-java', version: '1.5.0'],
+            UtilsRx                : [group: myGroup, name: 'utils-rx', version: '1.5.0'],
+            Utilsandroid           : [group: myGroup, name: 'utils-android', version: '1.5.0'],
+            BaseApplication        : [group: myGroup, name: 'base-application', version: '1.5.0'],
+
+            // Test
+            Test_Junit             : "junit:junit:4.13.2",
+            Test_X_Junit           : [group: 'androidx.test.ext', name: 'junit', version: '1.1.3'], // androidx.test.ext:junit:1.1.3
+            Test_X_Espresso        : [group: 'androidx.test.espresso', name: 'espresso-core', version: '3.4.0'], //androidx.test.espresso:espresso-core:3.4.0
+
+            //  Android Official https://dl.google.com/dl/android/maven2/index.html
+            // AndroidX
+            AndroidX_Annotation    : [group: 'androidx.annotation', name: 'annotation', version: '1.3.0'],
+            AndroidX_Appcompat     : [group: 'androidx.appcompat', name: 'appcompat', version: '1.4.1'],
+            AndroidX_SplashScreen  : [group: 'androidx.core', name: 'core-splashscreen', version: '1.0.0-beta02'],
+            AndroidX_RecyclerView  : [group: 'androidx.recyclerview', name: 'recyclerview', version: '1.2.1'],
+            AndroidX_SwipeRefresh  : [group: 'androidx.swiperefreshlayout', name: 'swiperefreshlayout', version: '1.1.0'],
+            // Google
+            Google_Material        : [group: 'com.google.android.material', name: 'material', version: '1.5.0'],
+
+            //  Tools
+            // leakcanary  https://repo1.maven.org/maven2/com/squareup/leakcanary/
+            Leakcanary             : "com.squareup.leakcanary:leakcanary-android:2.8.1",
+            // DoKit  https://github.com/didi/DoraemonKit
+            Doraemonkit_Debug      : [group: DoraemonkitGroup, name: 'dokitx', version: '3.5.0'],
+            Doraemonkit_Release    : [group: DoraemonkitGroup, name: 'dokitx-no-op', version: '3.5.0'],
+
+            //  Libs
+            // Rx
+            // https://repo1.maven.org/maven2/io/reactivex/rxjava2/
+            RxJava                 : [group: RxJava2Group, name: 'rxjava', version: '2.2.21'],
+            RxAndroid              : [group: RxJava2Group, name: 'rxandroid', version: '2.1.1'],
+            // https://repo1.maven.org/maven2/com/jakewharton/rxrelay2/rxrelay/
+            Rxrelay                : [group: 'com.jakewharton.rxrelay2', name: 'rxrelay', version: '2.1.1'],
+
+            // https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+            CymChad_BaseAdapter    : [group: 'com.github.CymChad', name: 'BaseRecyclerViewAdapterHelper', version: '2.9.45'],
+
+            // https://repo1.maven.org/maven2/com/squareup/retrofit2/retrofit/
+            Retrofit2_Retrofit     : [group: Retrofit2Group, name: 'retrofit', version: Retrofit2Version],
+            Retrofit2_GsonConverter: [group: Retrofit2Group, name: 'converter-gson', version: Retrofit2Version],
+
+            //  Serialization
+            // https://repo1.maven.org/maven2/com/google/protobuf/protobuf-lite/
+            ProtobufLite           : [group: 'com.google.protobuf', name: 'protobuf-lite', version: '3.0.1'],
+            Gson                   : [group: 'com.google.code.gson', name: 'gson', version: '2.8.5'],
+
+    ]
+
+}

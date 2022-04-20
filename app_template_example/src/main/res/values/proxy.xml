@@ -1,0 +1,5 @@
+<resources>
+    <!-- proxy -->
+
+    <dimen name="proxy_corners">@dimen/dimens_8dp</dimen>
+</resources>

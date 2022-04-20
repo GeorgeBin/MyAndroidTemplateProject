@@ -1,11 +1,9 @@
 package com.georgebindragon.app.template.example.app;
 
 import android.app.Application;
-import android.content.Intent;
 
 import com.georgebindragon.app.template.example.BuildConfig;
 import com.georgebindragon.app.template.example.publish.ChannelManager;
-import com.georgebindragon.application.service.CommonToolService;
 import com.georgebindragon.base.app.application.BaseApplication;
 import com.georgebindragon.base.app.lifecycle.IAppLifeCycle;
 import com.georgebindragon.lib.third.umeng.UMeng;
@@ -52,6 +50,6 @@ public class TemplateApplication extends BaseApplication
 	protected void initInMainProcess(Application application)
 	{
 		UMeng.init(application, Key_UMeng, WalleChannelReader.getChannel(application));
-		startService(new Intent(this, CommonToolService.class));
+		// startService(new Intent(this, CommonToolService.class));
 	}
 }

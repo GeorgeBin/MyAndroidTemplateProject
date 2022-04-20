@@ -18,6 +18,7 @@ import com.georgebindragon.lib.locate.baidu.BaseBaiduMapLocationListener;
 import java.util.Set;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.splashscreen.SplashScreen;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
+		SplashScreen.installSplashScreen(this);
+
 		setContentView(R.layout.activity_main);
 		test_tv = findViewById(R.id.ui_main_test_tv);
 		media_btn = findViewById(R.id.ui_main_media_btn);
@@ -61,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 			Bundle extras = applicationInfo.metaData;
 			if (null != extras)
 			{
-//				Object value     = extras.get("app.build.info.buildName");
+//				Object value     = extras.get("app.build.temp.buildName");
 //				String buildName = String.valueOf(value);
 //				test_tv.setText("buildName=" + buildName);
 			}

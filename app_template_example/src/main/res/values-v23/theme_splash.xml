@@ -1,0 +1,7 @@
+<resources>
+    <!-- Android6~11 splash -->
+    <style name="AppTheme.SplashScreen" parent="SplashScreenTheme.Base">
+        <!-- specify static icon -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_StaticIcon</item>
+    </style>
+</resources>

@@ -1,0 +1,30 @@
+<resources>
+    <!-- splash theme -->
+
+    <!--old launcher-->
+    <style name="AppTheme.Launcher" parent="AppTheme.Base">
+        <item name="android:windowBackground">@drawable/splash_OldBackground</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!--base splash-->
+    <style name="SplashScreenTheme.Base" parent="Theme.SplashScreen">
+        <!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--        <item name="colorAccent">@color/colorAccent</item>-->
+
+        <!--        <item name="android:statusBarColor">@color/statusColor</item>-->
+        <!--        <item name="android:navigationBarColor">@color/navigationColor</item>-->
+        <!--        <item name="android:windowLightNavigationBar">false</item>-->
+        <!--        <item name="android:windowLightStatusBar">false</item>-->
+
+        <!-- animation duration-->
+        <item name="windowSplashScreenAnimationDuration">@integer/icon_animator_duration</item>
+        <!-- screen background color -->
+        <item name="windowSplashScreenBackground">@color/splash_ScreenBackground</item>
+        <!-- old splash theme-->
+        <item name="postSplashScreenTheme">@style/AppTheme.Launcher</item>
+    </style>
+
+</resources>

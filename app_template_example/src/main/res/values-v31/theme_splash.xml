@@ -1,0 +1,11 @@
+<resources>
+    <!-- Android 12 splash -->
+    <style name="AppTheme.SplashScreen" parent="SplashScreenTheme.Base">
+        <!-- animated icon -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_AnimatedIcon</item>
+        <!-- icon background color-->
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/splash_IconBackgroundColor</item>
+        <!-- brand image-->
+        <item name="android:windowSplashScreenBrandingImage">@drawable/splash_BrandingImage</item>
+    </style>
+</resources>

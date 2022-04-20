@@ -1,5 +1,5 @@
-// import gradle file
 
+// buildscript
 buildscript {
     dependencies {
         // tools
@@ -8,10 +8,14 @@ buildscript {
     }
 }
 
+// plugins
 plugins {
     id 'com.android.application' version '7.1.3' apply false
     id 'com.android.library' version '7.1.3' apply false
 }
+
+// import gradle
+apply from: "${project.getRootDir()}/config/common.gradle"// import common gradle in project level, then all module can get it.
 
 task clean(type: Delete) {
     delete rootProject.buildDir

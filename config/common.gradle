@@ -1,0 +1,5 @@
+//  import common gradle file
+// method
+apply from: "${project.getRootDir()}/config/gradle/method.gradle"
+// dependencies
+apply from: "${project.getRootDir()}/config/gradle/dependencies.gradle"

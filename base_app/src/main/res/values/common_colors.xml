@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- common colors -->
+    <color name="pure_white">#ffffff</color>
+    <color name="pure_black">#000000</color>
+    <color name="pure_gray">#808080</color>
+</resources>

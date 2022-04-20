@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk SDKVersion.compileSdkVersion
 
     defaultConfig {
-        minSdk 21
-        targetSdk 31
+        minSdk SDKVersion.minSdkVersion
+        targetSdk SDKVersion.targetSdkVersion
 
         consumerProguardFiles "consumer-rules.pro"
 
@@ -23,7 +23,7 @@ android {
 dependencies {
     api fileTree(dir: "libs", include: ["*.jar"])
 
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    testImplementation Dependence.Test_Junit
+    androidTestImplementation Dependence.Test_X_Junit
+    androidTestImplementation Dependence.Test_X_Espresso
 }

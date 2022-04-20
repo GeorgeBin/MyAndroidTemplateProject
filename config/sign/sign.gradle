@@ -2,6 +2,7 @@
 //------------------------------------------ 签名 ------------------------------------------
 
 android {
+    // todo: keystore config
     def debugKeyPath = "${project.getRootDir()}/config/sign/debug.keystore"
     def releaseKeyPath = "${project.getRootDir()}/config/sign/release.keystore"
 

@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:icon="@drawable/debug_icon"
+        android:icon="@mipmap/app_icon_launcher_debug"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute"
-        tools:replace="android:icon,android:roundIcon">
-
+        tools:replace="android:icon">
     </application>
 
 </manifest>

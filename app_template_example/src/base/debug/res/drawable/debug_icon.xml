@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp">
 
-    <item android:drawable="@mipmap/app_icon_launcher" />
+    <item android:drawable="@mipmap/app_icon_launcher_foreground" />
 
-    <item android:drawable="@drawable/debug_svg_tab" />
-    <item android:drawable="@drawable/debug_svg_debug" />
+    <!-- debug tag -->
+    <item android:drawable="@drawable/debug_vector_tab" />
+    <item android:drawable="@drawable/debug_vector_debug" />
 
 </layer-list>

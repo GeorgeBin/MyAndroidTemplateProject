@@ -27,4 +27,7 @@
         <item name="postSplashScreenTheme">@style/AppTheme.Launcher</item>
     </style>
 
+    <!-- Android 21~22 splash -->
+    <style name="AppTheme.SplashScreen" parent="AppTheme.Launcher">
+    </style>
 </resources>

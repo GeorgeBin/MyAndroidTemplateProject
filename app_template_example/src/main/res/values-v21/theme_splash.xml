@@ -1,5 +1,0 @@
-<resources>
-    <!-- Android5 splash -->
-    <style name="AppTheme.SplashScreen" parent="AppTheme.Launcher">
-    </style>
-</resources>

@@ -5,7 +5,6 @@
 
     <application
         android:icon="@drawable/debug_icon"
-        android:roundIcon="@drawable/debug_icon_round"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute"
         tools:replace="android:icon,android:roundIcon">
 

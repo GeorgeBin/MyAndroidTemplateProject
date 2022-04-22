@@ -3,5 +3,5 @@
 
     <item android:drawable="@drawable/shape_white_corners" android:gravity="fill"/>
     <item android:drawable="@mipmap/app_icon_launcher" android:gravity="center"
-        android:width="@dimen/dimens_120dp" android:height="@dimen/dimens_120dp"/>
+        android:width="108dp" android:height="108dp"/>
 </layer-list>

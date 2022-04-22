@@ -12,7 +12,13 @@
         android:strokeAlpha="0.2" />
     <path android:pathData="M68.952,108V74.179a40.282,40.282 0,0 0,-0.329 -4.428L59.189,40.68 54,36.223 48.811,40.68 39.36,69.646s-0.312,2.569 -0.312,4.533V108Z">
         <aapt:attr name="android:fillColor">
-            <gradient>
+            <gradient
+                android:angle="0"
+                android:endX="68.9518"
+                android:endY="72.1116"
+                android:startX="39.0482"
+                android:startY="72.1116"
+                android:type="linear">
                 <item
                     android:color="#fffff4d0"
                     android:offset="0" />

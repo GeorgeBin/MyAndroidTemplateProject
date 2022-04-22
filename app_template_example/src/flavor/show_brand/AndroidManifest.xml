@@ -7,7 +7,7 @@
         android:icon="@mipmap/app_icon_launcher"
         android:label="@string/app_appName"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute"
-        tools:replace="android:icon,android:roundIcon">
+        tools:replace="android:icon">
 
     </application>
 

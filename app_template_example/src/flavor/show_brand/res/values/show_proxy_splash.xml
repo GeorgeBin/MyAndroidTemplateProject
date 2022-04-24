@@ -1,12 +1,12 @@
 <resources>
     <!-- Android 12 -->
-    <color name="splash_IconBackgroundColor">@color/pure_white</color>
+    <color name="splash_IconBackgroundColor">@color/pure_black</color>
     <drawable name="splash_BrandingImage">@drawable/layer_splash_background</drawable>
     <drawable name="splash_AnimatedIcon">@drawable/layer_splash_background</drawable>
 
     <!-- 23~30 -->
     <color name="splash_ScreenBackground">@color/pure_gray</color>
-    <drawable name="splash_StaticIcon">@mipmap/app_icon_launcher</drawable>
+    <drawable name="splash_StaticIcon">@mipmap/app_icon_launcher_foreground</drawable>
     <integer name="icon_animator_duration">1000</integer>
 
     <!-- old -->

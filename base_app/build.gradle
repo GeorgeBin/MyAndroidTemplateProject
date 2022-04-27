@@ -33,4 +33,11 @@ dependencies {
 
     // 基础功能依赖
     api 'com.getkeepsafe.relinker:relinker:1.4.4' // 加载so：https://github.com/KeepSafe/ReLinker
+
+    // QMUI
+    api Dependence.Qmui_Ui
+    api Dependence.Qmui_Arch
+    annotationProcessor Dependence.Qmui_ArchCompiler
+    api Dependence.Qmui_ArchAnnotation
+    api Dependence.Qmui_type
 }

@@ -8,6 +8,7 @@ dependencies {
     androidTestImplementation Dependence.Test_X_Espresso
 
     implementation project(path: ':base_app')
+    annotationProcessor Dependence.Qmui_ArchCompiler
 
     implementation Dependence.AndroidX_Appcompat
     implementation Dependence.AndroidX_SplashScreen

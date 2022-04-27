@@ -15,7 +15,10 @@ ext {
     myGroup = 'com.georgebindragon'
     DoraemonkitGroup = 'io.github.didi.dokit'
     RxJava2Group = 'io.reactivex.rxjava2'
-    QmuiGroup = 'com.qmuiteam'
+
+    // QMUI
+    QMUIGroup = 'com.qmuiteam'
+    QMUIVersion = '2.1.0'
 
     //Retrofit2
     Retrofit2Group = 'com.squareup.retrofit2'
@@ -59,6 +62,13 @@ ext {
             RxAndroid              : [group: RxJava2Group, name: 'rxandroid', version: '2.1.1'],
             // https://repo1.maven.org/maven2/com/jakewharton/rxrelay2/rxrelay/
             Rxrelay                : [group: 'com.jakewharton.rxrelay2', name: 'rxrelay', version: '2.1.1'],
+
+            //UI  https://repo1.maven.org/maven2/com/qmuiteam/
+            Qmui_Ui                : [group: QMUIGroup, name: 'qmui', version: QMUIVersion],
+            Qmui_Arch              : [group: QMUIGroup, name: 'arch', version: QMUIVersion],
+            Qmui_ArchCompiler      : [group: QMUIGroup, name: 'arch-compiler', version: QMUIVersion],
+            Qmui_ArchAnnotation    : [group: QMUIGroup, name: 'arch-annotation', version: QMUIVersion],
+            Qmui_type              : [group: QMUIGroup, name: 'type', version: '0.1.0'],
 
             // https://github.com/CymChad/BaseRecyclerViewAdapterHelper
             CymChad_BaseAdapter    : [group: 'com.github.CymChad', name: 'BaseRecyclerViewAdapterHelper', version: '2.9.45'],

@@ -22,6 +22,8 @@ import org.lsposed.hiddenapibypass.HiddenApiBypass;
 
 import java.util.Locale;
 
+import vivo.app.nightmode.NightModeController;
+
 /**
  * 创建人：George
  *
@@ -107,15 +109,15 @@ public abstract class BaseApplication extends Application
 
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) HiddenApiBypass.addHiddenApiExemptions(""); // 安卓隐藏API限制绕过
 
-//			// 兼容VIVO手机，夜间模式下，可能被反色的问题
-//			try
-//			{
-//				NightModeController.WHITE_PACKAGE_LIST.clear();// 这是我们进程独有的内存数据，所以可以放心 clear
-//				NightModeController.WHITE_PACKAGE_LIST.add(AppUtil.getProcessName(Process.myPid())); // processName
-//			} catch (Exception e)
-//			{
-//				LogProxy.e(TAG, "initBase", e);// try catch 是为了避免在非 Vivo 系统上不存在 NightModeController 而导致异常
-//			}
+			// 兼容VIVO手机，夜间模式下，可能被反色的问题
+			try
+			{
+				NightModeController.WHITE_PACKAGE_LIST.clear();// 这是我们进程独有的内存数据，所以可以放心 clear
+				NightModeController.WHITE_PACKAGE_LIST.add(AppUtil.getProcessName(Process.myPid())); // processName
+			} catch (Exception e)
+			{
+				LogProxy.e(TAG, "initBase-->vivo dark mode", e);// try catch 是为了避免在非 Vivo 系统上不存在 NightModeController 而导致异常
+			}
 		}
 
 		LogProxy.setLogVisibility(isLogEnable());

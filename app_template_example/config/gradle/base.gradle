@@ -43,6 +43,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    viewBinding {
+        enabled = true
+    }
+
     buildTypes {
 
         debug {
@@ -56,6 +60,10 @@ android {
             // proguardFiles FilePath.proguardFile
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    packagingOptions {
+        pickFirst 'META-INF/*.properties'
     }
 
     compileOptions {

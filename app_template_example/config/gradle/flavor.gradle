@@ -61,6 +61,12 @@ android {
             res.srcDir "${dir_BaseRoot}/${commonName}/res"
             manifest.srcFile "${dir_BaseRoot}/${commonName}/AndroidManifest.xml"
 
+            // 通用资源或功能
+            def exampleName = 'example'
+            res.srcDir "${dir_BaseRoot}/${exampleName}/res"
+            manifest.srcFile "${dir_BaseRoot}/${exampleName}/AndroidManifest.xml"
+            java.srcDir "${dir_BaseRoot}/${exampleName}/java"
+
             // 国际化资源
             def languageName = 'language'
             res.srcDir "${dir_BaseRoot}/${languageName}/res"

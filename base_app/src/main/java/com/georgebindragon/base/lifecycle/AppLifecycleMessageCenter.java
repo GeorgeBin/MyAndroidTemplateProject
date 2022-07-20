@@ -1,4 +1,4 @@
-package com.georgebindragon.base.app.lifecycle;
+package com.georgebindragon.base.lifecycle;
 
 import com.georgebindragon.base.function.log.LogProxy;
 import com.jakewharton.rxrelay2.BehaviorRelay;

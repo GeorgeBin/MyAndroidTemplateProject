@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+      AndroidManifest.xml
+      android:screenOrientation="unspecified"
+      unspecified=-1，landscape=0, portrait=1，user=2，behind=3，sensor=4，nosensor=5，sensorLandscape=6，sensorPortrait=7，
+      reverseLandscape=8，reversePortrait=9，fullSensor=10，userLandscape=11，userPortrait=12，fullUser=13，locked=14
+      https://developer.android.com/reference/android/content/pm/ActivityInfo.html -->
+
+    <integer name="activityScreenOrientation_unspecified">-1</integer>
+    <integer name="activityScreenOrientation_landscape">0</integer>
+    <integer name="activityScreenOrientation_portrait">1</integer>
+    <integer name="activityScreenOrientation_user">2</integer>
+    <integer name="activityScreenOrientation_behind">3</integer>
+    <integer name="activityScreenOrientation_sensor">4</integer>
+    <integer name="activityScreenOrientation_nosensor">5</integer>
+    <integer name="activityScreenOrientation_sensorLandscape">6</integer>
+    <integer name="activityScreenOrientation_sensorPortrait">7</integer>
+    <integer name="activityScreenOrientation_reverseLandscape">8</integer>
+    <integer name="activityScreenOrientation_reversePortrait">9</integer>
+    <integer name="activityScreenOrientation_fullSensor">10</integer>
+    <integer name="activityScreenOrientation_userLandscape">11</integer>
+    <integer name="activityScreenOrientation_userPortrait">12</integer>
+    <integer name="activityScreenOrientation_fullUser">13</integer>
+    <integer name="activityScreenOrientation_locked">14</integer>
+
+    <!--View.Visibility visible=0, invisible=1, gone=2 -->
+    <integer name="view_visibility_visible">0</integer>
+    <integer name="view_visibility_invisible">1</integer>
+    <integer name="view_visibility_gone">2</integer>
+
+</resources>

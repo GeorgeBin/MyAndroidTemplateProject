@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- common colors -->
-    <color name="pure_white">#ffffff</color>
-    <color name="pure_black">#000000</color>
-    <color name="pure_gray">#808080</color>
+    <color name="common_white">#FFFFFF</color>
+    <color name="common_black">#000000</color>
+    <color name="common_gray">#808080</color>
+    <color name="common_red">#FF0000</color>
+    <color name="common_orange">#FF7F00</color>
+    <color name="common_yellow">#FFFF00</color>
+    <color name="common_green">#00FF00</color>
+    <color name="common_blue">#0000FF</color>
+    <color name="common_indigo">#00FFFF</color>
+    <color name="common_violet">#8B00FF</color>
+
+    <!-- comfort colors-->
+    <color name="comfort_green">#19CAAD</color>
+    <color name="comfort_green2">#8CC7B5</color>
+    <color name="comfort_green3">#BEEDC7</color>
+    <color name="comfort_blue">#A0EEE1</color>
+    <color name="comfort_gall">#BEE7E9</color>
+    <color name="comfort_yellow">#D6D5B7</color>
+    <color name="comfort_gold">#D1BA74</color>
+    <color name="comfort_brown">#E6CEAC</color>
+    <color name="comfort_pink">#ECAD9E</color>
+    <color name="comfort_red">#F4606C</color>
+
+    <!-- special colors-->
+    <color name="comfort_marrs_green">#01847F</color>     <!--marrs green-->
+    <color name="comfort_tiffany_blue">#66CCCC</color>    <!--tiffany blue-->
+
+    <!--Android colors-->
+    <color name="android_focused_frame_blue">#803197ff</color>  <!-- Android focus frame color -->
+    <color name="android_focused_inside_blue">#333197ff</color>   <!-- Android focus inside color -->
+
 </resources>

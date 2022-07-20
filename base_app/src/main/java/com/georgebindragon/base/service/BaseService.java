@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.IBinder;
 
-import com.georgebindragon.base.app.lifecycle.AppLifecycleMessageCenter;
-import com.georgebindragon.base.app.lifecycle.AppLifecycleType;
+import com.georgebindragon.base.lifecycle.AppLifecycleMessageCenter;
+import com.georgebindragon.base.lifecycle.AppLifecycleType;
 import com.georgebindragon.base.function.log.LogProxy;
 import com.georgebindragon.base.rx.utils.RxCommonUtil;
 

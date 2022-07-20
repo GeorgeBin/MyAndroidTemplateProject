@@ -1,4 +1,4 @@
-package com.georgebindragon.base.app.lifecycle;
+package com.georgebindragon.base.lifecycle;
 
 /**
  * 创建人：George

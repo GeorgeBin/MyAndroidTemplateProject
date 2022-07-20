@@ -11,7 +11,7 @@ import android.os.Build;
 import com.georgebindragon.application.billboard.notification.bean.ForegroundNotificationBean;
 import com.georgebindragon.base.BaseUtils;
 import com.georgebindragon.base.R;
-import com.georgebindragon.base.app.application.ActivitiesManager;
+import com.georgebindragon.base.app.ActivitiesManager;
 import com.georgebindragon.base.function.log.LogProxy;
 import com.georgebindragon.base.system.software.ActivityUtil;
 import com.georgebindragon.base.system.software.AppUtil;

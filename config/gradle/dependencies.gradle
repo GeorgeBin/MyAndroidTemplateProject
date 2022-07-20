@@ -12,8 +12,11 @@ ext {
             targetSdkVersion_old: 20,
     ]
 
+    // George
     myGroup = 'com.georgebindragon'
+
     DoraemonkitGroup = 'io.github.didi.dokit'
+    // RxJava2
     RxJava2Group = 'io.reactivex.rxjava2'
 
     // QMUI

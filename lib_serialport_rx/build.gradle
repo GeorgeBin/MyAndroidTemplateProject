@@ -24,7 +24,9 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     packagingOptions {
-        pickFirst 'META-INF/*.properties'
+        resources {
+            pickFirsts += ['META-INF/*.properties']
+        }
     }
 }
 

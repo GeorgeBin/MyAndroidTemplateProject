@@ -27,6 +27,11 @@ android {
             ]
         }
     }
+    packagingOptions {
+        resources {
+            pickFirsts += ['META-INF/*.properties']
+        }
+    }
 }
 
 dependencies {

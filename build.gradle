@@ -3,7 +3,9 @@
 buildscript {
     dependencies {
         // tools
-        classpath 'com.meituan.android.walle:plugin:1.1.7' // channel:https://github.com/Meituan-Dianping/walle
+        // classpath 'com.meituan.android.walle:plugin:1.1.7' // walle：https://github.com/Meituan-Dianping/walle
+        classpath 'com.github.Petterpx.walle:plugin:1.0.4' // walle2：https://github.com/Petterpx/walle
+        classpath 'com.tencent.vasdolly:plugin:3.0.4' // VasDolly：https://github.com/Tencent/VasDolly
         classpath 'io.github.didi.dokit:dokitx-plugin:3.5.0.1'
     }
 }

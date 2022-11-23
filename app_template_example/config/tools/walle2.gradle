@@ -1,6 +1,7 @@
 apply plugin: 'walle'
 
-// https://github.com/Meituan-Dianping/walle
+// https://github.com/Petterpx/walle
+// It's a fork of official walle
 
 walle {
 
@@ -23,7 +24,7 @@ walle {
 }
 
 dependencies {
-    implementation 'com.meituan.android.walle:library:1.1.7'
+    implementation 'com.github.Petterpx.walle:library:1.0.4'
 }
 
 // attention:

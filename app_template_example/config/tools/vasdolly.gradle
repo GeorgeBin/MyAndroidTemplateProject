@@ -1,0 +1,29 @@
+apply plugin: 'com.tencent.vasdolly'
+
+// https://github.com/Tencent/VasDolly
+
+channel {
+
+    //    appName ： 当前project的name
+    //    versionName ： 当前Variant的versionName
+    //    versionCode ： 当前Variant的versionCode
+    //    buildType ： 当前Variant的buildType，即debug or release
+    //    flavorName ： 当前的渠道名称
+    //    appId ： 当前Variant的applicationId
+    //    buildTime ： 当前编译构建日期时间，时间格式可以自定义，默认格式：yyyyMMdd-HHmmss
+
+    fastMode = false //快速模式：生成渠道包时不进行校验（速度可以提升10倍以上，默认为false）
+    buildTimeDateFormat = 'yyyyMMdd-HHmmss'//buildTime的时间格式，默认格式：yyyyMMdd-HHmmss
+    lowMemory = false  //低内存模式（仅针对V2签名，默认为false）：只把签名块、中央目录和EOCD读取到内存，不把最大头的内容块读取到内存，在手机上合成APK时，可以使用该模式
+
+    outputDir = new File(FilePath.apkOutputPath)
+    channelFile = file("${project.getProjectDir()}/config/pack/channel.txt")
+
+    // todo: change "App" with your app name
+    // default=${appName}-${versionName}-${versionCode}-${flavorName}-${buildType}-${buildTime}.apk
+    apkNameFormat = 'App-v${versionName}-${buildTime}-${flavorName}-${buildType}'
+}
+
+dependencies {
+    implementation 'com.tencent.vasdolly:helper:3.0.4'
+}
